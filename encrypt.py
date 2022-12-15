@@ -69,10 +69,11 @@ while choice != "3":
     print("2. Decrypt File")
     print("3. Quit")
     choice = input()
-    if choice == "1" or choice == "2":
-        key = int(input("Enter a key as int!\n"))
-        filename = input("Enter filename with extension:\n")
-    if choice == "1":
-        Encrypt(filename, key)
-    if choice == "2":
-        Decrypt(filename, key)
+    match choice:
+        case '1' | '2':
+            key = int(input("Enter password as int: \n"))
+            filename = input("Enter file with extension: \n")
+        case '1':
+            Encrypt(filename, key)
+        case '2':
+            Decrypt(filename, key)
